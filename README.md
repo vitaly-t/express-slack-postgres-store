@@ -4,7 +4,7 @@ This is a super simple store implementation for [express-slack](https://github.c
 
 ## Install
 
-`npm install --save exprss-slack-postgres-store`
+`npm install --save express-slack-postgres-store`
 
 ### Create store database table
 
@@ -14,7 +14,7 @@ The database table used by the store module must be created. Example creating a 
 CREATE TABLE IF NOT EXISTS store (
   id char(50) NOT NULL PRIMARY KEY,
   data jsonb
-)
+);
 ```
 
 ## Usage
