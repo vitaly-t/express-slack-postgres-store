@@ -2,6 +2,7 @@
   "name": "express-slack-postgres-store",
   "description": "PostgreSQL data store for use with @johnagan/express-slack module",
   "version": "0.1.0",
+  "main": "src/store.js",
   "homepage": "https://github.com/stpe/express-slack-postgres-store",
   "author": {
     "name": "Stefan Pettersson",
@@ -29,13 +30,6 @@
     "postgres"
   ],
   "dependencies": {
-    "eslint": "3.15.0",
     "pg-promise": "5.5.6"
-  },
-  "devDependencies": {
-    "eslint": "3.15.0",
-    "eslint-config-standard": "6.2.1",
-    "eslint-plugin-promise": "3.4.0",
-    "eslint-plugin-standard": "2.0.1"
   }
 }
