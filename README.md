@@ -31,7 +31,7 @@ Argument | Description
 **database** | Postgres [connection string](https://github.com/vitaly-t/pg-promise/wiki/Connection-Syntax#connection-string)
 **table** | Database table name for data store
 
-Now use the initialized variable as a data store when configuring [express-slack](https://github.com/johnagan/express-slack):
+Now use the initialized variable as a data store when configuring [express-slack](https://github.com/johnagan/express-slack#usage):
 
 ```
 app.use('/slack', slack({
