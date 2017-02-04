@@ -8,7 +8,7 @@ module.exports = config => {
 
   const db = pgp(config.database);
 
-  const store = {
+  return {
     get: function(id) {
       return db.one(`
         SELECT data FROM ${config.table} WHERE id = $1
