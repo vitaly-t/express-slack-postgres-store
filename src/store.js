@@ -3,7 +3,7 @@ const pgp = require("pg-promise")();
 module.exports = config => {
   config = {
     database: config.database || process.env.DATABASE_URL,
-    table: config.table || "store"
+    table: config.table || "store"
   };
 
   const db = pgp(config.database);
@@ -32,4 +32,4 @@ module.exports = config => {
       .then(result => result.map(row => row.data));
     }
   };
-}
+};
