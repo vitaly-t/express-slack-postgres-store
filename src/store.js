@@ -8,28 +8,22 @@ module.exports = config => {
 
   const db = pgp(config.database);
 
-  return {
+  return {    
     get: function(id) {
-      return db.one(`
-        SELECT data FROM ${config.table} WHERE id = $1
-      `, [id])
-      .then(result => result.data);
+      return db.one('SELECT data FROM $1~ WHERE id = $2', [config.table, id], a => a.data);
     },
 
     save: function(id, data) {
       return db.none(`
-        INSERT INTO ${config.table} (id, data)
-        VALUES ($1, $2)
+        INSERT INTO $1~ (id, data)
+        VALUES ($2, $3)
         ON CONFLICT (id) DO UPDATE
         SET data = EXCLUDED.data
-      `, [id, data]);
+      `, [config.table, id, data]);
     },
 
     all: function() {
-      return db.manyOrNone(`
-        SELECT data FROM ${config.table};
-      `)
-      .then(result => result.map(row => row.data));
+      return db.map('SELECT data FROM $1~', config.table, row => row.data);
     }
   };
 };
